@@ -1016,6 +1016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 462298166}
   - component: {fileID: 462298167}
+  - component: {fileID: 462298168}
   m_Layer: 0
   m_Name: Left Hand
   m_TagString: Untagged
@@ -1110,6 +1111,31 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &462298168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462298165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbc63e37fc2dc44b86193a0cccbf8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UITogle
+  toggleUI:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Toggle UI
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f385b285-da74-4465-ad75-4dece80d166f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  targetUI: {fileID: 1666959813}
 --- !u!1 &491767630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2062,7 @@ GameObject:
   - component: {fileID: 657633167}
   - component: {fileID: 657633166}
   - component: {fileID: 657633165}
+  - component: {fileID: 657633168}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2052,7 +2079,7 @@ RectTransform:
   m_GameObject: {fileID: 657633163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 318775580}
@@ -2060,7 +2087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.818, y: -245}
+  m_AnchoredPosition: {x: -39.818, y: -466}
   m_SizeDelta: {x: 534.3633, y: 105.2515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &657633165
@@ -2106,7 +2133,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 657633166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 657633168}
+        m_TargetAssemblyTypeName: SpawnShape, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &657633166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,6 +2184,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657633163}
   m_CullTransparentMesh: 1
+--- !u!114 &657633168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657633163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ededb55d5dce41e0b88ac2b8a84cdcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnShape
+  shapeDropdown: {fileID: 1844397045}
+  scaleScrollbar: {fileID: 1917018537}
 --- !u!1001 &711309307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5077,7 +5130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rectangle
+  m_text: Cube
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5335,7 +5388,7 @@ RectTransform:
   m_GameObject: {fileID: 1844397043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1731585038}
@@ -5345,7 +5398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 234}
   m_SizeDelta: {x: 320, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1844397045
@@ -5399,13 +5452,16 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: Rectangle
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: Cube
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Cone
+    - m_Text: Sphere
+      m_Image: {fileID: 0}
+      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    - m_Text: Capsule
+      m_Image: {fileID: 0}
+      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    - m_Text: Cylinder
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -5495,7 +5551,7 @@ GameObject:
   - component: {fileID: 1917018538}
   - component: {fileID: 1917018537}
   m_Layer: 5
-  m_Name: Scrollbar
+  m_Name: Scale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5510,7 +5566,7 @@ RectTransform:
   m_GameObject: {fileID: 1917018535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.5, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 290828661}
@@ -5518,7 +5574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49559376, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 301}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 593}
   m_SizeDelta: {x: 1506.9058, y: 83.8927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917018537
@@ -5564,7 +5620,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1209271459}
   m_HandleRect: {fileID: 1209271458}
   m_Direction: 0
-  m_Value: 0.547
+  m_Value: 0
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
